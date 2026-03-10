@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Jaxon Sounds</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; background: #222; color: white; }
+        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 20px; }
+        button { padding: 20px; font-size: 18px; cursor: pointer; border-radius: 8px; border: none; background: #007bff; color: white; }
+        button:active { background: #0056b3; }
+    </style>
+</head>
+<body>
+    <h1>My Soundboard</h1>
+    <div class="grid">
+        <button onclick="new Audio('https://www.soundjay.com/buttons/beep-01a.mp3').play()">Beep 1</button>
+        <button onclick="new Audio('https://www.soundjay.com/buttons/beep-02.mp3').play()">Beep 2</button>
+        <button onclick="new Audio('https://www.soundjay.com/buttons/beep-03.mp3').play()">Beep 3</button>
+    </div>
+</body>
+</html>
