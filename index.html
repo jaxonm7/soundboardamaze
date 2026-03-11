@@ -2,40 +2,56 @@
 <html>
 <head>
     <title>My Jaxon Sounds</title>
-    <style> body { font-family: sans-serif; text-align: center; background-color: #1a1a1a !important; color: white; margin: 0; padding: 20px; }
-        button { 
-    .grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px; /* More space for the text beneath */
-    padding: 20px;
-}
+    <style> <style>
+  body { 
+    font-family: sans-serif; 
+    text-align: center; 
+    background-color: #1a1a1a; 
+    color: white; 
+    margin: 0; 
+    padding: 20px; 
+  }
 
-/* This creates the circular button container */
-.sound-item {
+  .grid {
+    display: grid;
+    /* This makes 3 columns that stay neat */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .sound-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: white;
-    font-weight: bold;
-}
+  }
 
-button { 
-    width: 80px; /* Makes it a circle */
-    height: 80px; 
-    border-radius: 50%; /* This makes it round */
-    border: 4px solid #333; /* Dark border like the image */
-    background: #444; 
+  button { 
+    width: 100px; 
+    height: 100px; 
+    border-radius: 50%; 
+    border: none;
     cursor: pointer;
-    margin-bottom: 10px; /* Space between circle and text */
-    box-shadow: 0 4px #222;
-    transition: 0.1s;
-}
+    /* This puts your red button image INSIDE the button */
+    background-image: url('Screenshot 2026-03-11 222647.png');
+    background-size: cover;
+    background-position: center;
+    background-color: transparent;
+    transition: transform 0.1s;
+  }
 
-button:active {
-    transform: translateY(3px);
-    box-shadow: 0 1px #222;
-}
+  button:active {
+    transform: scale(0.95); /* Makes it look pressed */
+  }
+
+  span {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 14px;
+  }
+</style>
     </style>
 </head>
 <body> <img src="peak png.png" alt="jaxon" style="width: 200px; border-radius: 50%;">
