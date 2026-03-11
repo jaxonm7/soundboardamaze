@@ -3,8 +3,27 @@
 <head>
     <title>My Jaxon Sounds</title>
     <style>
-        body { font-family: sans-serif; text-align: center; background: ##0b0d17; color: black; }
-        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 20px; }
+        body { 
+    font-family: sans-serif; 
+    text-align: center; 
+    background: #1a1a1a; /* Dark grey */
+    color: white; 
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* This makes sure your buttons stay on top of the dots */
+.grid, h1 {
+    position: relative;
+    z-index: 10;
+}
+
+#canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
         button { 
     padding: 20px; 
     font-size: 18px; 
