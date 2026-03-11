@@ -2,69 +2,7 @@
 <html>
 <head>
     <title>My Jaxon Sounds</title>
-    <style>
-        <canvas id="canvas"></canvas>
-
-<script>
-const canvas = document.getElementById('canvas');
-const ctx = canvas.getContext('2d');
-let dots = [];
-
-function resize() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-}
-
-window.addEventListener('resize', resize);
-resize();
-
-for (let i = 0; i < 100; i++) {
-    dots.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vX: (Math.random() - 0.5) * 0.5,
-        vY: (Math.random() - 0.5) * 0.5,
-        size: Math.random() * 2
-    });
-}
-
-function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = 'white';
-    dots.forEach(dot => {
-        dot.x += dot.vX;
-        dot.y += dot.vY;
-        if (dot.x < 0 || dot.x > canvas.width) dot.vX *= -1;
-        if (dot.y < 0 || dot.y > canvas.height) dot.vY *= -1;
-        ctx.beginPath();
-        ctx.arc(dot.x, dot.y, dot.size, 0, Math.PI * 2);
-        ctx.fill();
-    });
-    requestAnimationFrame(animate);
-}
-animate();
-</script>
-        body { 
-    font-family: sans-serif; 
-    text-align: center; 
-    background: #1a1a1a; /* Dark grey */
-    color: white; 
-    margin: 0;
-    overflow-x: hidden;
-}
-
-/* This makes sure your buttons stay on top of the dots */
-.grid, h1 {
-    position: relative;
-    z-index: 10;
-}
-
-#canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
+    <style>body { font-family: sans-serif; text-align: center; background-color: #1a1a1a !important; color: white; margin: 0; padding: 20px; }
         button { 
     padding: 20px; 
     font-size: 18px; 
