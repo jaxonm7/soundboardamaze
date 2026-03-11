@@ -2,54 +2,85 @@
 <html>
 <head>
     <title>Jaxon Sounds</title>
-    <style> 
+    <style>
+        body { 
             font-family: sans-serif; 
             text-align: center; 
             background-color: #1a1a1a; 
             color: white; 
-            margin: 0; 
-            overflow-x: hidden;
+            margin: 0;
+            padding: 20px;
         }
-        canvas { position: fixed; top: 0; left: 0; z-index: 1; }
-        .content { position: relative; z-index: 10; padding: 20px; }
+
+        /* This ensures your title and buttons are ALWAYS on top */
+        .container {
+            position: relative;
+            z-index: 10;
+        }
+
         .grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            max-width: 500px;
+            gap: 25px;
+            max-width: 600px;
             margin: 0 auto;
+            padding-top: 20px;
         }
-        .sound-item { display: flex; flex-direction: column; align-items: center; }
+
+        .sound-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         button { 
-            width: 80px; height: 80px; 
-            border-radius: 50%; border: none;
+            width: 100px; 
+            height: 100px; 
+            border-radius: 50%; 
+            border: none;
+            /* MAKE SURE THIS FILENAME IS EXACTLY WHAT YOU HAVE IN GITHUB */
             background-image: url('Screenshot 2026-03-11 222647.png');
             background-size: cover;
             background-position: center;
             cursor: pointer;
-            transition: transform 0.1s;
+            box-shadow: 0 4px #000;
         }
-        button:active { transform: scale(0.9); }
-        span { margin-top: 8px; font-size: 12px; font-weight: bold; }
-    </script>
-        const canvas = document.getElementById('canvas');
-        const ctx = canvas.getContext('2d');
-        let dots = [];
-        function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
-        window.onresize = resize; resize();
-        for (let i = 0; i < 80; i++) { dots.push({ x: Math.random()*canvas.width, y: Math.random()*canvas.height, vx: (Math.random()-0.5)*0.5, vy: (Math.random()-0.5)*0.5 }); }
-        function anim() {
-            ctx.clearRect(0,0,canvas.width,canvas.height);
-            ctx.fillStyle = 'white';
-            dots.forEach(d => {
-                d.x += d.vx; d.y += d.vy;
-                if(d.x<0 || d.x>canvas.width) d.vx*=-1;
-                if(d.y<0 || d.y>canvas.height) d.vy*=-1;
-                ctx.beginPath(); ctx.arc(d.x, d.y, 1.5, 0, Math.PI*2); ctx.fill();
-            });
-            requestAnimationFrame(anim);
-    </script>
+
+        button:active {
+            transform: scale(0.95);
+            box-shadow: 0 2px #000;
+        }
+
+        span {
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+    </style>
 </head>
+<body>
+
+    <div class="container">
+        <h1>Jaxon sounds</h1>
+        
+        <div class="grid">
+            <div class="sound-item">
+                <button onclick="new Audio('Screen Recording 2026-03-10 221505.mp3').play()"></button>
+                <span>Android</span>
+            </div>
+            <div class="sound-item">
+                <button onclick="new Audio('Screen Recording 2026-03-10 221533.mp3').play()"></button>
+                <span>Jaxon Rizz</span>
+            </div>
+            <div class="sound-item">
+                <button onclick="new Audio('Screen Recording 2026-03-10 221353.mp3').play()"></button>
+                <span>FAHH jaxon</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
 <body> <img src="peak png.png" alt="jaxon" style="width: 200px; border-radius: 50%;">
     <h1>Jaxon sounds</h1>
     
