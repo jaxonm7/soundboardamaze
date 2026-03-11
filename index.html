@@ -3,6 +3,47 @@
 <head>
     <title>My Jaxon Sounds</title>
     <style>
+        <canvas id="canvas"></canvas>
+
+<script>
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+let dots = [];
+
+function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+
+window.addEventListener('resize', resize);
+resize();
+
+for (let i = 0; i < 100; i++) {
+    dots.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vX: (Math.random() - 0.5) * 0.5,
+        vY: (Math.random() - 0.5) * 0.5,
+        size: Math.random() * 2
+    });
+}
+
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = 'white';
+    dots.forEach(dot => {
+        dot.x += dot.vX;
+        dot.y += dot.vY;
+        if (dot.x < 0 || dot.x > canvas.width) dot.vX *= -1;
+        if (dot.y < 0 || dot.y > canvas.height) dot.vY *= -1;
+        ctx.beginPath();
+        ctx.arc(dot.x, dot.y, dot.size, 0, Math.PI * 2);
+        ctx.fill();
+    });
+    requestAnimationFrame(animate);
+}
+animate();
+</script>
         body { 
     font-family: sans-serif; 
     text-align: center; 
