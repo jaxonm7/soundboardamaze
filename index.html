@@ -4,30 +4,37 @@
     <title>My Jaxon Sounds</title>
     <style> body { font-family: sans-serif; text-align: center; background-color: #1a1a1a !important; color: white; margin: 0; padding: 20px; }
         button { 
-    padding: 20px; 
-    font-size: 18px; 
-    cursor: pointer; 
-    border-radius: 12px; 
-    border: none; 
-    background: #444; /* Dark gray button */
-    color: white; 
+    .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px; /* More space for the text beneath */
+    padding: 20px;
+}
+
+/* This creates the circular button container */
+.sound-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
     font-weight: bold;
-    /* This adds the "3D" shadow effect */
-    box-shadow: 0 6px #222; 
-    transition: all 0.1s;
-    margin: 10px;
 }
 
-/* This makes the button "sink" when you click it */
-button:active { 
-    box-shadow: 0 2px #222;
-    transform: translateY(4px);
-    background: #555;
+button { 
+    width: 80px; /* Makes it a circle */
+    height: 80px; 
+    border-radius: 50%; /* This makes it round */
+    border: 4px solid #333; /* Dark border like the image */
+    background: #444; 
+    cursor: pointer;
+    margin-bottom: 10px; /* Space between circle and text */
+    box-shadow: 0 4px #222;
+    transition: 0.1s;
 }
 
-/* This makes it glow slightly when you hover your mouse */
-button:hover {
-    background: #666;
+button:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px #222;
 }
     </style>
 </head>
@@ -51,5 +58,6 @@ button:hover {
         <button onclick="new Audio('Screen Recording 2026-03-11 160847.mp3').play()">RIP MY GRANNY</button>
         <button onclick="new Audio('what-the-hell-meme-sound-effect.mp3').play()">WHAT DA HELLLLL</button>
         <button onclick="new Audio('the-rock-sound-effect.mp3').play()">Rock BOOM</button>
+        <button onclick="new Audio('caseoh-at-burger-king.mp3').play()">Caseoh Burger king</button>
 </body>
 </html>
