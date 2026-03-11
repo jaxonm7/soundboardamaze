@@ -26,36 +26,37 @@
             margin: 0 auto;
             padding-top: 20px;
         }
+.sound-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
 
-        .sound-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+/* The Button itself */
+button { 
+    width: 100px; 
+    height: 100px; 
+    border-radius: 50%; 
+    border: none;
+    /* Transparent background to hide the default button white/grey */
+    background-color: transparent; 
+    /* This uses your image as the button face */
+    background-image: url('Screenshot 2026-03-11 222647.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
 
-        button { 
-            width: 100px; 
-            height: 100px; 
-            border-radius: 50%; 
-            border: none;
-            /* MAKE SURE THIS FILENAME IS EXACTLY WHAT YOU HAVE IN GITHUB */
-            background-image: url('button 123.webp');
-            background-size: cover;
-            background-position: center;
-            cursor: pointer;
-            box-shadow: 0 4px #000;
-        }
-
-        button:active {
-            transform: scale(0.95);
-            box-shadow: 0 2px #000;
-        }
-
-        span {
-            margin-top: 10px;
-            font-weight: bold;
-            font-size: 14px;
-        }
+/* Text style */
+span {
+    color: white;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+}
     </style>
 </head>
 <body>
